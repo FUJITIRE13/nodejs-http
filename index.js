@@ -4,9 +4,9 @@ const http = require('node:http');
 const pug = require('pug');
 const server = http
   .createServer((req, res) => {
-    const now = new Date();
+   // const now = new Date();
     console.info(
-      `[${now}] Requested by ${req.socket.remoteAddress}`
+      `Requested by ${req.socket.remoteAddress}`
     );
     res.writeHead(200, {
       'Content-type': 'text/html; charset=utf-8'
@@ -63,7 +63,7 @@ const server = http
             //const decoded = decodeURIComponent(rawData);
             const answer = new URLSearchParams(rawData);
             const body = `${answer.get('name')}san voted for ${answer.get('favorite')}`;
-            console.info(`[${now}]  ${body}`);
+            console.info(`${body}`);
             res.write(
             `<!DOCTYPE html>
               <html lang="ja">
